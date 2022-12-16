@@ -2,6 +2,9 @@
   display: flex;
   justify-content: center;
 }
+*{
+  background-color: aqua;
+}
 
 .button {
   min-width: 36px;
