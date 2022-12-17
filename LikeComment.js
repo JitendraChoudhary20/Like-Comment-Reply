@@ -1,6 +1,7 @@
 const commentWrapper = document.querySelector(".comment-wrapper");
 const commentInput = document.querySelector(".comment-input");
 const addButton = document.querySelector(".add-button");
+const backup = commentInput.getAttribute('placeholder');
 
 const comments = [
   //   { id: 1, text: "This is a comment", likes: 0, replies: [] },
@@ -14,6 +15,13 @@ const createCommentObject = (commentText) => {
     replies: [],
   };
 };
+commentInput.onclick = function(){
+  commentInput.setAttribute('placeholder','');
+}
+commentInput.onblur = function(){
+  commentInput.setAttribute('placeholder',backup);
+}
+
 
 const findCommentObject = (comments, commentId) => {
   for (let i = 0; i < comments.length; i++) {
@@ -84,6 +92,15 @@ const createCommentNode = (comment) => {
   replyWrapper.classList.add("reply-wrapper");
 
   const replyInput = document.createElement("input");
+  replyInput.placeholder = "leave reply here";
+
+  const backReplyPlaceholder = replyInput.getAttribute('placeholder');
+  replyInput.onclick = function(){
+    replyInput.setAttribute('placeholder','');
+  }
+  replyInput.onblur = function(){
+    replyInput.setAttribute('placeholder',backReplyPlaceholder);
+  }
 
   const addReplyButton = document.createElement("button");
   addReplyButton.classList.add("button", "success");

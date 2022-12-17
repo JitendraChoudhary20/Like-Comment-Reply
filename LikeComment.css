@@ -1,9 +1,7 @@
+
 .input-and-button-wrapper {
   display: flex;
   justify-content: center;
-}
-*{
-  background-color: aqua;
 }
 
 .button {
