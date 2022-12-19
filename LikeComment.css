@@ -39,8 +39,14 @@
 }
 
 .comment-wrapper {
-  width: 600px;
+  width: 90%;
+  height: 500px;
   margin: 20px auto;
+  border: 2px solid black;
+  border-radius: 9px;
+  overflow: scroll;
+  overscroll-behavior-y: contain;
+  
 }
 
 .comment {
