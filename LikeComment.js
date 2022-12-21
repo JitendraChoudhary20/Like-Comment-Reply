@@ -3,6 +3,7 @@ const commentInput = document.querySelector(".comment-input");
 const addButton = document.querySelector(".add-button");
 const backup = commentInput.getAttribute('placeholder');
 
+
 const comments = [
   //   { id: 1, text: "This is a comment", likes: 0, replies: [] },
 ];
@@ -162,6 +163,7 @@ const renderComments = () => {
   });
 };
 
+
 const addComment = () => {
   const commentText = commentInput.value;
 
@@ -176,6 +178,12 @@ const addComment = () => {
   commentInput.value = "";
 
   renderComments();
+  
+
+    commentWrapper.scrollTo(0, commentWrapper.offsetHeight);
+    
+
 };
+
 
 addButton.addEventListener("click", addComment);
